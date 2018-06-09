@@ -10,30 +10,6 @@
 # tell me whether anyone has won, and tell me which player won, if any.
 import numpy
 
-winner_is_2 = [[2, 2, 0],
-    	       [2, 1, 0],
-    	       [2, 1, 1]]
-
-winner_is_1 = [[1, 2, 0],
-	           [2, 1, 0],
-	           [2, 1, 1]]
-
-winner_is_also_1 = [[0, 1, 0],
-	                [2, 1, 0],
-	                [2, 1, 1]]
-
-winner_is_also_11 = [[1, 1, 1],
-	                [2, 1, 0],
-	                [2, 2, 1]]
-
-no_winner = [[1, 2, 0],
-	         [2, 1, 0],
-	         [2, 1, 2]]
-
-also_no_winner = [[1, 2, 0],
-	              [2, 1, 0],
-	              [2, 1, 0]]
-
 def tic_tac_toe_find_winner(board):
     board_t = numpy.transpose(board)
     board_t = [list(board_t[0]), list(board_t[1]), list(board_t[2])]
@@ -52,9 +28,34 @@ def present(board):
         print(el)
     print(tic_tac_toe_find_winner(board), end='\n\n')
 
-present(winner_is_2)
-present(winner_is_1)
-present(winner_is_also_1)
-present(winner_is_also_11)
-present(no_winner)
-present(also_no_winner)
+if __name__=='__main__':
+    winner_is_2 = [[2, 2, 0],
+        	       [2, 1, 0],
+        	       [2, 1, 1]]
+
+    winner_is_1 = [[1, 2, 0],
+    	           [2, 1, 0],
+    	           [2, 1, 1]]
+
+    winner_is_also_1 = [[0, 1, 0],
+    	                [2, 1, 0],
+    	                [2, 1, 1]]
+
+    winner_is_also_11 = [[1, 1, 1],
+    	                [2, 1, 0],
+    	                [2, 2, 1]]
+
+    no_winner = [[1, 2, 0],
+    	         [2, 1, 0],
+    	         [2, 1, 2]]
+
+    also_no_winner = [[1, 2, 0],
+    	              [2, 1, 0],
+    	              [2, 1, 0]]
+
+    present(winner_is_2)
+    present(winner_is_1)
+    present(winner_is_also_1)
+    present(winner_is_also_11)
+    present(no_winner)
+    present(also_no_winner)

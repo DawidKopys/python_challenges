@@ -1,16 +1,16 @@
 board = [[0,0,0], [0,0,0], [0,0,0]]
 
-def show_board():
+def show_board(board):
     for el in board:
         print(el)
 
-def get_player_input(player_nr):
+def get_player_input(player_nr, board):
     if player_nr == 2:
         player = 'Player2: '
-        mark = 'o'
+        mark = 2
     elif player_nr == 1:
         player = 'Player1: '
-        mark = 'x'
+        mark = 1
 
     pos = input(player).split(', ')
     row = int(pos[0]) - 1
@@ -18,10 +18,13 @@ def get_player_input(player_nr):
     if board[row][col] == 0:
         board[row][col] = mark
 
-show_board()
-while 1:
-    get_player_input(1)
-    show_board()
+    return [row, col]
 
-    get_player_input(2)
+if __name__=='__main__':
     show_board()
+    while 1:
+        get_player_input(1, board)
+        show_board(board)
+
+        get_player_input(2, board)
+        show_board(board)

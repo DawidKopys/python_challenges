@@ -43,20 +43,21 @@ def lst_to_str(lst):
         game_board += line + '\n'
     return game_board[:-2]
 
-x = int(input('Gimme the length of the game board: '))
-y = int(input('Gimme the height of the game board: '))
+if __name__=='__main__':
+    x = int(input('Gimme the length of the game board: '))
+    y = int(input('Gimme the height of the game board: '))
 
-print('draw_game_board')
-draw_game_board(x, y)
+    print('draw_game_board')
+    draw_game_board(x, y)
 
-print('list_game_board')
-[print(x) for x in list_game_board(x,y)]
+    print('list_game_board')
+    [print(x) for x in list_game_board(x,y)]
 
-print('str_game_board')
-print(str_game_board(x,y))
+    print('str_game_board')
+    print(str_game_board(x,y))
 
-print('list_game_board (with lst_to_str)')
-print(lst_to_str(list_game_board(x,y)))
+    print('list_game_board (with lst_to_str)')
+    print(lst_to_str(list_game_board(x,y)))
 
-print('str_join_game_board')
-print(str_join_game_board(x,y))
+    print('str_join_game_board')
+    print(str_join_game_board(x,y))

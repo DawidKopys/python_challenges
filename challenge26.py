@@ -58,9 +58,10 @@ def present(board):
         print(el)
     print(tic_tac_toe_find_winner(board), end='\n\n')
 
-present(winner_is_2)
-present(winner_is_1)
-present(winner_is_also_1)
-present(winner_is_also_11)
-present(no_winner)
-present(also_no_winner)
+if __name__=='__main__':
+    present(winner_is_2)
+    present(winner_is_1)
+    present(winner_is_also_1)
+    present(winner_is_also_11)
+    present(no_winner)
+    present(also_no_winner)
