@@ -24,15 +24,32 @@ def insert_into_board(player_nr, graph_board, row, col):
 
     graph_board[row] = graph_board[row][:col] + mark + graph_board[row][col+1:]
 
+def check_full(l_board):
+    flat_board = [x for sublist in l_board for x in sublist]
+    if 0 not in flat_board:
+        u_d = input("check_full No winner, do you want to quit? \'q\' to quit, \'c\' to continue: ")
+        return u_d
 
 if __name__=='__main__':
+    user_decision = ''
     winner = 0
     board = [[0,0,0], [0,0,0], [0,0,0]]
     gr_board = list_game_board(3,3)
-    print(lst_to_str(gr_board))
     print('Welcome in Tic Tac Toe game!')
-    while winner == 0:
+    print(lst_to_str(gr_board))
+
+    while user_decision != 'q':
+        # player1
+        user_decision = check_full(board)
+        if user_decision == 'c':
+            board = [[0,0,0], [0,0,0], [0,0,0]]
+            gr_board = list_game_board(3,3)
+            continue
+
         pos = get_player_input(1, board)
+        while pos == [-1, -1]:
+            print('You cant place your mark there!')
+            pos = get_player_input(1, board)
         row = pos[0]
         col = pos[1]
         insert_into_board(1, gr_board, row, col)
@@ -41,9 +58,24 @@ if __name__=='__main__':
 
         winner = tic_tac_toe_find_winner(board)
         if winner != 0:
-            break
+            print('The winner is player number :', winner)
+            user_decision = input("Do you want to quit? \'q\' to quit, \'c\' to continue: ")
+            if user_decision == 'c':
+                board = [[0,0,0], [0,0,0], [0,0,0]]
+                gr_board = list_game_board(3,3)
+                continue
+
+        # player2
+        user_decision = check_full(board)
+        if user_decision == 'c':
+            board = [[0,0,0], [0,0,0], [0,0,0]]
+            gr_board = list_game_board(3,3)
+            continue
 
         pos = get_player_input(2, board)
+        while pos == [-1, -1]:
+            print('You cant place your mark there!')
+            pos = get_player_input(2, board)
         row = pos[0]
         col = pos[1]
         insert_into_board(2, gr_board, row, col)
@@ -51,4 +83,8 @@ if __name__=='__main__':
         print(lst_to_str(gr_board))
 
         winner = tic_tac_toe_find_winner(board)
-    print('The winner is player number :', winner)
+        if winner != 0:
+            print('The winner is player number :', winner)
+            user_decision = input("Do you want to quit? \'q\' to quit, \'c\' to continue: ")
+
+    print("Good bye!")

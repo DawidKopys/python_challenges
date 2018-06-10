@@ -17,6 +17,10 @@ def get_player_input(player_nr, board):
     col = int(pos[1]) - 1
     if board[row][col] == 0:
         board[row][col] = mark
+    else:
+        # wrong input, place already taken
+        row = -1
+        col = -1
 
     return [row, col]
 
