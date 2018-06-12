@@ -37,14 +37,15 @@ def pickRandomWord5(filename):
         content = list(in_file)
     return random.choice(content).rstrip('\n')
 
-f_name = 'ch30_dict.txt'
-l_s = pickRandomWord1(f_name)
-print(l_s)
-l_s = pickRandomWord2(f_name)
-print(l_s)
-l_s = pickRandomWord3(f_name)
-print(l_s)
-l_s = pickRandomWord4(f_name)
-print(l_s)
-l_s = pickRandomWord5(f_name)
-print(l_s)
+if __name__ == '__main__':
+    f_name = 'ch30_dict.txt'
+    l_s = pickRandomWord1(f_name)
+    print(l_s)
+    l_s = pickRandomWord2(f_name)
+    print(l_s)
+    l_s = pickRandomWord3(f_name)
+    print(l_s)
+    l_s = pickRandomWord4(f_name)
+    print(l_s)
+    l_s = pickRandomWord5(f_name)
+    print(l_s)
