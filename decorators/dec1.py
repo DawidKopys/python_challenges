@@ -25,6 +25,8 @@ get_text = p_decorate(get_text)
 
 print(get_text('Dawid'))
 
+# other changes
+
 # Python's Decorator Syntax - see dec2.py
 # We dont have to 'get_text = p_decorate(get_text)'. There is a neat shortvut for that,
 # which is to mention the name of the decorating function before the function to be decoratedselfself.
