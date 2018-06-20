@@ -25,3 +25,7 @@ def get_text(name):
 print(get_text('Dawid'))
 
 # change for new branch
+
+#test_merge_comnflicts change
+#foo
+#bar
