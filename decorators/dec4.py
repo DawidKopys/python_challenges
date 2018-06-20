@@ -29,3 +29,5 @@ print(get_text('Dawid'))
 #test_merge_comnflicts change
 #foo
 #bar
+
+#and more on test_merge_comnflicts 
