@@ -10,7 +10,7 @@ while (1):
     while cmd_p1 not in commands:
         print('\nWrong command entered.\n   You can only use '
         '\"rock\", \"paper\", \"scissors\" and \"quit\"')
-        cmd_p1 = input('Player1: ')
+        cmd_p1 = input('Player1: ').lower()
     if cmd_p1 == 'quit':
         break
 
@@ -18,7 +18,7 @@ while (1):
     while cmd_p2 not in commands:
         print('\nWrong command entered.\n   You can only use '
         '\"rock\", \"paper\", \"scissors\" and \"quit\"')
-        cmd_p2 = input('Player2: ')
+        cmd_p2 = input('Player2: ').lower()
     if cmd_p2 == 'quit':
         break
 
