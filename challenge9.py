@@ -11,10 +11,10 @@ while choice != a:
         break
     else:
         choice = int(choice)
-    if choice > a:
-        print('Go lower!')
-    elif choice < a:
-        print('Go higher!')
-    else:
-        print('You guessed it! The number was', choice)
-        print('You needed', counter, 'tries!')
+        if choice > a:
+            print('Go lower!')
+        elif choice < a:
+            print('Go higher!')
+        else:
+            print('You guessed it! The number was', choice)
+            print('You needed', counter, 'tries!')
